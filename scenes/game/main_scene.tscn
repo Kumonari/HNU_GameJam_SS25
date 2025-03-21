@@ -1,14 +1,19 @@
-[gd_scene load_steps=5 format=4 uid="uid://dam7upddk0nue"]
+[gd_scene load_steps=6 format=4 uid="uid://dam7upddk0nue"]
 
 [ext_resource type="Texture2D" uid="uid://b4yokln6353c7" path="res://assets/sprites/slime_tileset.png" id="1_fhsd1"]
 [ext_resource type="Texture2D" uid="uid://dwf80lw2vylw1" path="res://assets/sprites/background.png" id="2_t36v5"]
+[ext_resource type="PackedScene" uid="uid://c1f2g0w8hub43" path="res://scenes/game_objects/characters/main_charakter.tscn" id="3_htyx0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bi6up"]
 texture = ExtResource("1_fhsd1")
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_f7yua"]
 physics_layer_0/collision_layer = 1
@@ -25,3 +30,6 @@ z_index = -1
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("2_t36v5")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_htyx0")]
+position = Vector2(134, 120)

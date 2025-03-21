@@ -1,20 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://d0p1twd8gfpqi"]
+[gd_scene load_steps=5 format=3 uid="uid://d0p1twd8gfpqi"]
 
-[ext_resource type="Script" path="res://Zacy_body_2d.gd" id="1_0hq6q"]
+[ext_resource type="PackedScene" uid="uid://c1f2g0w8hub43" path="res://scenes/game_objects/characters/main_charakter.tscn" id="1_wy108"]
 [ext_resource type="Texture2D" uid="uid://byulfhhnlymi3" path="res://icon.svg" id="2_qpo8h"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s2807"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_nr3vq"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_qpo8h")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_thkjp"]
 
@@ -23,15 +10,7 @@ size = Vector2(337, 20)
 
 [node name="Zac" type="Node2D"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-script = ExtResource("1_0hq6q")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-shape = SubResource("CapsuleShape2D_s2807")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
-scale = Vector2(0.116567, 0.197123)
-sprite_frames = SubResource("SpriteFrames_nr3vq")
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_wy108")]
 
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(114, 116)

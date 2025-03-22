@@ -2,7 +2,7 @@ extends Control
 
 @onready var Health1 = $Leben1
 @onready var Health2 = $Leben2
-@onready var Health3 = $Leben3
+@onready var Health3 = $Leben3  
 
 func _ready() -> void:
 	Health_Screen()

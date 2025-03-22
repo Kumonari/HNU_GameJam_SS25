@@ -93,9 +93,9 @@ script = ExtResource("4_16cwv")
 show_behind_parent = true
 texture_repeat = 2
 points = PackedVector2Array(0, 0, 0, 0)
-width = 3.0
+width = 5.0
 texture = ExtResource("5_kqgth")
-texture_mode = 1
+texture_mode = 2
 
 [node name="RayCast2D" type="RayCast2D" parent="Hook"]
 target_position = Vector2(320, 0)

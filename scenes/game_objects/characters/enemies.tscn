@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://f7wk6ete6oua"]
 
-[ext_resource type="Script" path="res://Enemie_follow.gd" id="1_0u1b8"]
+[ext_resource type="Script" path="res://scripts/Enemie_follow.gd" id="1_0u1b8"]
 [ext_resource type="Texture2D" uid="uid://bi3u4e5ay0o1x" path="res://assets/sprites/fireball_anim_sheet.png" id="2_omb0r"]
-[ext_resource type="Script" path="res://scenes/game_objects/characters/fire_area.gd" id="3_723li"]
+[ext_resource type="Script" path="res://scripts/fire_area.gd" id="3_723li"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fvht7"]
 atlas = ExtResource("2_omb0r")

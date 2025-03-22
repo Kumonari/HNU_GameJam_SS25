@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bvqal8eq1g7nm"]
+[gd_scene load_steps=4 format=3 uid="uid://bexhrj5kj4uxw"]
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_8cips"]
-[ext_resource type="Texture2D" uid="uid://byulfhhnlymi3" path="res://icon.svg" id="1_n005h"]
+[ext_resource type="Texture2D" uid="uid://cgqvd7bjgpma5" path="res://assets/sprites/slime_hearts.png" id="2_q4utx"]
+[ext_resource type="Script" path="res://scripts/timer.gd" id="3_43yu6"]
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -13,16 +14,25 @@ grow_vertical = 2
 script = ExtResource("1_8cips")
 
 [node name="Leben1" type="Sprite2D" parent="."]
-position = Vector2(16, 12)
-scale = Vector2(0.16, 0.12)
-texture = ExtResource("1_n005h")
+position = Vector2(20, 12)
+texture = ExtResource("2_q4utx")
+vframes = 2
 
 [node name="Leben2" type="Sprite2D" parent="."]
-position = Vector2(42, 12)
-scale = Vector2(0.16, 0.12)
-texture = ExtResource("1_n005h")
+position = Vector2(38, 12)
+texture = ExtResource("2_q4utx")
+vframes = 2
 
 [node name="Leben3" type="Sprite2D" parent="."]
-position = Vector2(68, 12)
-scale = Vector2(0.16, 0.12)
-texture = ExtResource("1_n005h")
+position = Vector2(56, 12)
+texture = ExtResource("2_q4utx")
+vframes = 2
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 256.0
+offset_right = 320.0
+offset_bottom = 23.0
+text = "00:00:00"
+script = ExtResource("3_43yu6")

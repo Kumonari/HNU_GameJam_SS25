@@ -1,8 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://de6l3wwifoej8"]
 
-[ext_resource type="Script" path="res://lvlswap.gd" id="1_x0uxb"]
+[ext_resource type="Script" path="res://scripts/lvlswap.gd" id="1_x0uxb"]
 [ext_resource type="Texture2D" uid="uid://dcsbmoiajwi4t" path="res://assets/sprites/door_level2_backlayer.png" id="2_5t1bb"]
 [ext_resource type="Texture2D" uid="uid://gktbjc88v3uo" path="res://assets/sprites/door_level2_frontlayer.png" id="3_36t6r"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_llc4g"]
 

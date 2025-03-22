@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://d1yxnpvhyg2y4"]
 
 [ext_resource type="Texture2D" uid="uid://bfgkqr7kjndqo" path="res://assets/sprites/sawblade.png" id="1_s4pvl"]
-[ext_resource type="Script" path="res://scenes/game_objects/sawblade.gd" id="2_o0eup"]
-[ext_resource type="Script" path="res://scenes/game_objects/sawhit.gd" id="3_t6csy"]
+[ext_resource type="Script" path="res://scripts/sawblade.gd" id="2_o0eup"]
+[ext_resource type="Script" path="res://scripts/sawhit.gd" id="3_t6csy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_64jyp"]
 radius = 16.0

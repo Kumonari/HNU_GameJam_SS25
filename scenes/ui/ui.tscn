@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bvqal8eq1g7nm"]
 
-[ext_resource type="Script" path="res://scenes/game/ui.gd" id="1_8cips"]
+[ext_resource type="Script" path="res://scripts/ui.gd" id="1_8cips"]
 [ext_resource type="Texture2D" uid="uid://byulfhhnlymi3" path="res://icon.svg" id="1_n005h"]
 
 [node name="UI" type="Control"]

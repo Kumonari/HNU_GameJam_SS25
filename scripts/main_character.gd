@@ -13,7 +13,7 @@ var slowout: float = 100
 # hook variables
 var hook_pos: Vector2
 var hooked: bool = false
-var arm_lenght: float = $Hook.raycast1.target_position_x
+var arm_lenght: float = 500 # should equal $Hook.raycast1.target_position_x
 var current_arm_lenght: float 
 
 var health = 3
@@ -30,7 +30,7 @@ func _physics_process(delta: float) -> void:
 	gravity(delta)
 	movement(delta)
 	
-	hook(delta)
+	#hook(delta)
 	
 	
 	
@@ -59,11 +59,11 @@ func movement(delta) -> void:
 		velocity.x = move_toward(velocity.x, 0, slowout * delta)
 
 
-func hook(delta) -> void:
-	if hook_node:
-		hook_node.look_at(get_global_mouse_position())
-		if Input.is_action_pressed("l_click"):
-			hook_pos = get_hook_pos()
-			if hook_pos:
-				hooked = true
-				current_arm_lenght = global_position.distance_to(hook_pos)
+#func hook(delta) -> void:
+	#if hook_node:
+		#hook_node.look_at(get_global_mouse_position())
+		#if Input.is_action_pressed("l_click"):
+			#hook_pos = get_hook_pos()
+			#if hook_pos:
+				#hooked = true
+				#current_arm_lenght = global_position.distance_to(hook_pos)

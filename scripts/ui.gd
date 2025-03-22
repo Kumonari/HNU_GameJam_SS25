@@ -3,10 +3,10 @@ extends Control
 @onready var Health1 = $Leben1
 @onready var Health2 = $Leben2
 @onready var Health3 = $Leben3
-@onready var player: MainCharacter = $"../CharacterBody2D"
+@export var player: MainCharacter
 
 
-func _process(delta):
+func _process(_delta):
 	Health_Screen()
 
 func Health_Screen():

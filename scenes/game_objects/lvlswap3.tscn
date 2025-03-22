@@ -1,14 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://de6l3wwifoej8"]
+[gd_scene load_steps=5 format=3 uid="uid://b3p4khkvdywbh"]
 
-[ext_resource type="Script" path="res://scripts/lvlswap.gd" id="1_x0uxb"]
-[ext_resource type="Texture2D" uid="uid://bp48cqaapua3w" path="res://assets/sprites/door_level2_backlayer.png" id="2_oja8p"]
-[ext_resource type="Texture2D" uid="uid://bb8oywc0us6qs" path="res://assets/sprites/door_level2_frontlayer.png" id="3_bl3xm"]
+[ext_resource type="Script" path="res://scripts/lvlswap.gd" id="1_od8mc"]
+[ext_resource type="Texture2D" uid="uid://c8c1yd8rhy1sj" path="res://assets/sprites/door_level3_backlayer.png" id="2_vdhr6"]
+[ext_resource type="Texture2D" uid="uid://dtqdcs0fnluno" path="res://assets/sprites/door_level3_frontlayer.png" id="3_65ndf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_llc4g"]
 size = Vector2(20, 17)
 
 [node name="lvlswap" type="Node2D"]
-script = ExtResource("1_x0uxb")
+script = ExtResource("1_od8mc")
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -18,10 +18,10 @@ shape = SubResource("RectangleShape2D_llc4g")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -1
-texture = ExtResource("2_oja8p")
+texture = ExtResource("2_vdhr6")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 z_index = 1
-texture = ExtResource("3_bl3xm")
+texture = ExtResource("3_65ndf")
 
 [connection signal="body_entered" from="Area2D" to="." method="loadNextLevel"]

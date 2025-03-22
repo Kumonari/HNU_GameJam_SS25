@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bexhrj5kj4uxw"]
+[gd_scene load_steps=5 format=3 uid="uid://bexhrj5kj4uxw"]
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_8cips"]
 [ext_resource type="Texture2D" uid="uid://cgqvd7bjgpma5" path="res://assets/sprites/slime_hearts.png" id="2_q4utx"]
 [ext_resource type="Script" path="res://scripts/timer.gd" id="3_43yu6"]
+[ext_resource type="FontFile" uid="uid://b64xqar5whfcd" path="res://assets/fonts/minecraft/Minecraft.ttf" id="3_h0id8"]
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -31,8 +32,12 @@ vframes = 2
 [node name="Label" type="Label" parent="."]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 0
-offset_left = 256.0
-offset_right = 320.0
-offset_bottom = 23.0
+offset_left = 249.0
+offset_top = 5.0
+offset_right = 382.0
+offset_bottom = 29.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("3_h0id8")
+theme_override_font_sizes/font_size = 16
 text = "00:00:00"
 script = ExtResource("3_43yu6")

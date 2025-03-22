@@ -1,7 +1,7 @@
 extends Node2D
 
 #Dateipfad des nächsten Level
-@export_file("*.tscn") var scenePath
+@export_file("res://scenes/game/level_2.tscn") var scenePath
 
 #Lädt nächste Szene wenn Player den LevelExit berührt
 func loadNextLevel(body):

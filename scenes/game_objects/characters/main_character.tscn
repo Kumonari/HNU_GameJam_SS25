@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c1f2g0w8hub43"]
+[gd_scene load_steps=23 format=3 uid="uid://c1f2g0w8hub43"]
 
 [ext_resource type="Script" path="res://scripts/main_character.gd" id="1_ukas5"]
 [ext_resource type="Texture2D" uid="uid://bqv433dxxfyen" path="res://assets/sprites/slime_grapple_standing.png" id="2_qm2yj"]
@@ -6,11 +6,17 @@
 [ext_resource type="Texture2D" uid="uid://2n220mfr2dsw" path="res://assets/sprites/slime_jump.png" id="3_l3gq8"]
 [ext_resource type="Script" path="res://scripts/hook.gd" id="4_16cwv"]
 [ext_resource type="Texture2D" uid="uid://b24pmwthjwb8b" path="res://assets/sprites/slime_grapple.png" id="5_kqgth"]
+[ext_resource type="Texture2D" uid="uid://u3qw1w2vthk4" path="res://assets/sprites/slime_collision_wall.png" id="5_xylip"]
+[ext_resource type="Texture2D" uid="uid://oqvwqpwnclr" path="res://assets/sprites/slime_walk.png" id="6_2blte"]
 [ext_resource type="Texture2D" uid="uid://d032k1hc1dkk1" path="res://assets/sprites/slime_grapple_hand.png" id="6_lrhwi"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_66x4b"]
 radius = 6.0
 height = 18.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvkpi"]
+atlas = ExtResource("3_l3gq8")
+region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uwbyq"]
 atlas = ExtResource("2_qm2yj")
@@ -28,16 +34,36 @@ region = Rect2(16, 0, 16, 16)
 atlas = ExtResource("2_y0tsp")
 region = Rect2(32, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_26fw2"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_4p8qe"]
 atlas = ExtResource("3_l3gq8")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_r047g"]
-atlas = ExtResource("3_l3gq8")
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvppw"]
+atlas = ExtResource("6_2blte")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iq2lt"]
+atlas = ExtResource("6_2blte")
 region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_grhtd"]
+atlas = ExtResource("6_2blte")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bu1dk"]
+atlas = ExtResource("6_2blte")
+region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v71v2"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvkpi")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_uwbyq")
@@ -62,15 +88,46 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_26fw2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_r047g")
+"texture": SubResource("AtlasTexture_4p8qe")
 }],
 "loop": true,
 "name": &"jump",
-"speed": 1.0
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qm2yj")
+}, {
+"duration": 2.0,
+"texture": ExtResource("5_xylip")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qm2yj")
+}],
+"loop": false,
+"name": &"squash",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wvppw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iq2lt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_grhtd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bu1dk")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
 }]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mu388"]
+radius = 3.0
 
 [node name="MainCharacter" type="CharacterBody2D"]
 script = ExtResource("1_ukas5")
@@ -82,8 +139,7 @@ shape = SubResource("CapsuleShape2D_66x4b")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_v71v2")
-animation = &"hooking"
-autoplay = "idle"
+animation = &"idle"
 
 [node name="Hook" type="Node2D" parent="."]
 show_behind_parent = true
@@ -104,3 +160,8 @@ collision_mask = 2
 [node name="Hand" type="Sprite2D" parent="Hook"]
 visible = false
 texture = ExtResource("6_lrhwi")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Hook/Hand"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hook/Hand/CharacterBody2D"]
+shape = SubResource("CircleShape2D_mu388")

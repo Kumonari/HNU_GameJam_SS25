@@ -7,7 +7,6 @@ var speed : float = 5000
 var jump : float = -10000
 var fall_speed :float = 800
 var slowout: float = 100
-
 var health = 3
 
 #@onready var hook: Node2D = MainCharacter.find_children("Hook")
@@ -16,14 +15,14 @@ func _physics_process(delta: float) -> void:
 	# Base Controls
 	gravity(delta)
 	movement(delta)
-	
+
 	move_and_slide()
 
 
 func gravity(delta) -> void:
 	if not is_on_floor():
 		velocity.y += fall_speed * delta 
-
+	
 
 func movement(delta) -> void:
 	# Jump

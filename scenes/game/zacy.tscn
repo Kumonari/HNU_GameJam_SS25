@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://d0p1twd8gfpqi"]
+[gd_scene load_steps=5 format=3 uid="uid://cwkon5n5s4qei"]
 
-[ext_resource type="PackedScene" uid="uid://c1f2g0w8hub43" path="res://scenes/game_objects/characters/main_charakter.tscn" id="1_wy108"]
+[ext_resource type="PackedScene" uid="uid://c1f2g0w8hub43" path="res://scenes/game_objects/characters/main_character.tscn" id="1_wy108"]
 [ext_resource type="Texture2D" uid="uid://byulfhhnlymi3" path="res://icon.svg" id="2_qpo8h"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_thkjp"]

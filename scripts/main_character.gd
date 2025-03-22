@@ -1,3 +1,4 @@
+class_name MainCharacter
 extends CharacterBody2D
 
 @onready var jumpcount : int = 0

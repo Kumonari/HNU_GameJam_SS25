@@ -20,7 +20,7 @@ texture = ExtResource("1_fhsd1")
 
 [sub_resource type="TileSet" id="TileSet_f7yua"]
 physics_layer_0/collision_layer = 2
-physics_layer_0/collision_mask = 5
+physics_layer_0/collision_mask = 3
 sources/0 = SubResource("TileSetAtlasSource_bi6up")
 
 [node name="MainScene" type="CanvasLayer"]

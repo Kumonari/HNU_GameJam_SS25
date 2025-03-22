@@ -13,10 +13,10 @@ var slowout: float = 100
 # hook variables
 var hook_pos: Vector2
 var hooked: bool = false
-var arm_lenght: float = 500 # should equal $Hook.raycast1.target_position_x
+var arm_lenght: float = 320 # should equal $Hook.raycast1.target_position_x
 var current_arm_lenght: float
-var swing_speed: float = 0.6
-var hook_speed: float = 1500
+var swing_speed: float = 0.45
+var hook_speed: float = 2500
 
 var health = 3
 
@@ -30,11 +30,9 @@ func _physics_process(delta: float) -> void:
 	gravity(delta)
 	movement(delta)
 	
-	# Hook logic and visuals
+	# Hook logic
 	hook()
-	update()
 	if hooked:
-		gravity(delta)
 		swing(delta)
 		velocity *= swing_speed
 		
@@ -53,6 +51,7 @@ func _draw() -> void:
 		var collide_point = hook_node.get_collision_point()
 		if colliding and pos.distance_to(collide_point) < arm_lenght:
 			draw_line(Vector2(0, -16), to_local(collide_point), Color(1, 1, 1, 0.25), 0.5, true)
+
 
 func gravity(delta) -> void:
 	if not is_on_floor():
@@ -94,10 +93,6 @@ func get_hook_pos() -> Vector2:
 			return raycast.get_collision_point()
 	
 	return Vector2.ZERO
-
-
-func update() -> void:
-	pass
 
 
 func swing(delta) ->void:

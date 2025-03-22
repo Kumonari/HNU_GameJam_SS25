@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://nps5dfh310o8"]
+
+[ext_resource type="Script" path="res://scenes/game_objects/vanish_obstacle.gd" id="1_gr140"]
+[ext_resource type="Texture2D" uid="uid://byulfhhnlymi3" path="res://icon.svg" id="1_uhhev"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u3ffe"]
+size = Vector2(114, 18)
+
+[node name="vanishObstacle" type="Node2D"]
+
+[node name="vanishObstacle" type="StaticBody2D" parent="."]
+script = ExtResource("1_gr140")
+
+[node name="Sprite2D" type="Sprite2D" parent="vanishObstacle"]
+position = Vector2(0, 0.5)
+scale = Vector2(0.90625, 0.148438)
+texture = ExtResource("1_uhhev")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="vanishObstacle"]
+shape = SubResource("RectangleShape2D_u3ffe")

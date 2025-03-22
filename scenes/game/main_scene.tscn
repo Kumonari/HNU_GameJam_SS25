@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://dam7upddk0nue"]
+[gd_scene load_steps=7 format=4 uid="uid://dam7upddk0nue"]
 
 [ext_resource type="Texture2D" uid="uid://b4yokln6353c7" path="res://assets/sprites/slime_tileset.png" id="1_fhsd1"]
 [ext_resource type="Texture2D" uid="uid://dwf80lw2vylw1" path="res://assets/sprites/background.png" id="2_t36v5"]
 [ext_resource type="PackedScene" uid="uid://c1f2g0w8hub43" path="res://scenes/game_objects/characters/main_character.tscn" id="3_htyx0"]
+[ext_resource type="PackedScene" uid="uid://bvqal8eq1g7nm" path="res://scenes/game/ui.tscn" id="4_65sok"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bi6up"]
 texture = ExtResource("1_fhsd1")
@@ -35,3 +36,5 @@ texture = ExtResource("2_t36v5")
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_htyx0")]
 position = Vector2(134, 120)
 collision_mask = 2
+
+[node name="UI" parent="." instance=ExtResource("4_65sok")]

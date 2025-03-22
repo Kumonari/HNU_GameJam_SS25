@@ -93,6 +93,7 @@ script = ExtResource("4_16cwv")
 show_behind_parent = true
 texture_repeat = 2
 points = PackedVector2Array(0, 0, 0, 0)
+width = 3.0
 texture = ExtResource("5_kqgth")
 texture_mode = 1
 

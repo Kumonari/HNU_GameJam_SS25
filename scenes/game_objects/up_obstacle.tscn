@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8pn7ndcdm7c5"]
+
+[ext_resource type="Script" path="res://up_obstacle.gd" id="1_ttrgv"]
+[ext_resource type="Texture2D" uid="uid://byulfhhnlymi3" path="res://icon.svg" id="2_drkqn"]
+
+[sub_resource type="Curve2D" id="Curve2D_kwcj0"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, -38, 0, 0, 0, 0, 3, 138, 0, 0, 0, 0, 1, -39, 0, 0, 0, 0, 1, -39)
+}
+point_count = 4
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ksu1n"]
+size = Vector2(64, 11)
+
+[node name="up_obstacle" type="Node2D"]
+position = Vector2(152, 39)
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_kwcj0")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(0, -38)
+rotates = false
+script = ExtResource("1_ttrgv")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Path2D/PathFollow2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D/StaticBody2D"]
+position = Vector2(2.98023e-08, -0.5)
+scale = Vector2(0.5, 0.0859375)
+texture = ExtResource("2_drkqn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/StaticBody2D"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_ksu1n")

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1yxnpvhyg2y4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_64jyp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1wsx3"]
+
+[node name="saw" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CircleShape2D_64jyp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D"]
+sprite_frames = SubResource("SpriteFrames_1wsx3")

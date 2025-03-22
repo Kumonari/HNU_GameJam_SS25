@@ -84,9 +84,11 @@ randomness = 1.0
 script = ExtResource("3_723li")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
+position = Vector2(2, -5)
 shape = SubResource("CircleShape2D_qn5no")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(2, -5)
 shape = SubResource("CircleShape2D_qn5no")
 
 [connection signal="body_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D/Area2D" method="_on_body_entered"]

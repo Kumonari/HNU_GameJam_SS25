@@ -1,15 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://d1yxnpvhyg2y4"]
+[gd_scene load_steps=5 format=3 uid="uid://d1yxnpvhyg2y4"]
+
+[ext_resource type="Texture2D" uid="uid://bfgkqr7kjndqo" path="res://assets/sprites/sawblade.png" id="1_s4pvl"]
+[ext_resource type="Script" path="res://scenes/game_objects/sawblade.gd" id="2_o0eup"]
+[ext_resource type="Script" path="res://scenes/game_objects/sawhit.gd" id="3_t6csy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_64jyp"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_1wsx3"]
+radius = 16.0
 
 [node name="saw" type="Node2D"]
+position = Vector2(48, 27)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("CircleShape2D_64jyp")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D"]
-sprite_frames = SubResource("SpriteFrames_1wsx3")
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("1_s4pvl")
+script = ExtResource("2_o0eup")
+
+[node name="Area2D" type="Area2D" parent="StaticBody2D"]
+script = ExtResource("3_t6csy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Area2D"]
+shape = SubResource("CircleShape2D_64jyp")
+
+[connection signal="body_entered" from="StaticBody2D/Area2D" to="StaticBody2D/Area2D" method="_on_body_entered"]

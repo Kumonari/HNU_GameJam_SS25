@@ -27,3 +27,4 @@ func Jump(delta):
 		velocity.x = speed * delta
 	elif player.global_position.x < global_position.x - 110:
 		velocity.x = -speed * delta
+		

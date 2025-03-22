@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=4 uid="uid://dam7upddk0nue"]
+[gd_scene load_steps=8 format=4 uid="uid://dam7upddk0nue"]
 
 [ext_resource type="Texture2D" uid="uid://b4yokln6353c7" path="res://assets/sprites/slime_tileset.png" id="1_fhsd1"]
 [ext_resource type="Texture2D" uid="uid://dwf80lw2vylw1" path="res://assets/sprites/background.png" id="2_t36v5"]
 [ext_resource type="PackedScene" uid="uid://c1f2g0w8hub43" path="res://scenes/game_objects/characters/main_character.tscn" id="3_htyx0"]
-[ext_resource type="PackedScene" uid="uid://bexhrj5kj4uxw" path="res://scenes/game/ui.tscn" id="4_65sok"]
-[ext_resource type="PackedScene" uid="uid://rbv0s38s4knt" path="res://scenes/game/DeathZone.tscn" id="5_ryyn3"]
-[ext_resource type="PackedScene" uid="uid://f7wk6ete6oua" path="res://scenes/game_objects/characters/enemies.tscn" id="6_ka4cs"]
+[ext_resource type="PackedScene" uid="uid://bexhrj5kj4uxw" path="res://scenes/ui/ui.tscn" id="4_65sok"]
+[ext_resource type="PackedScene" uid="uid://rbv0s38s4knt" path="res://scenes/game_objects/DeathZone.tscn" id="5_ryyn3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bi6up"]
 texture = ExtResource("1_fhsd1")
@@ -42,8 +41,5 @@ collision_mask = 2
 [node name="UI" parent="." instance=ExtResource("4_65sok")]
 
 [node name="DeathZone" parent="." instance=ExtResource("5_ryyn3")]
-position = Vector2(149, 169)
+position = Vector2(151, 176)
 scale = Vector2(18.2603, 0.414062)
-
-[node name="Enemies" parent="." instance=ExtResource("6_ka4cs")]
-position = Vector2(299, 107)

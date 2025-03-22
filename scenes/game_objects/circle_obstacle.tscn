@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://fek28xpmidlb"]
 
-[ext_resource type="Script" path="res://Circle_obstacle.gd" id="1_pot0y"]
+[ext_resource type="Script" path="res://scripts/Circle_obstacle.gd" id="1_pot0y"]
 [ext_resource type="Texture2D" uid="uid://byulfhhnlymi3" path="res://icon.svg" id="2_36rdw"]
 
 [sub_resource type="Curve2D" id="Curve2D_8egj6"]

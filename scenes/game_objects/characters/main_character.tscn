@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dhp3k83t47070" path="res://assets/sprites/slime_idle.png" id="2_y0tsp"]
 [ext_resource type="Texture2D" uid="uid://2n220mfr2dsw" path="res://assets/sprites/slime_jump.png" id="3_l3gq8"]
 [ext_resource type="Script" path="res://scripts/hook.gd" id="4_16cwv"]
-[ext_resource type="Texture2D" uid="uid://b24pmwthjwb8b" path="res://assets/sprites/slime_grapple.png" id="5_kqgth"]
+[ext_resource type="Texture2D" uid="uid://dsqs4bup3w7t1" path="res://assets/sprites/slime_grapple_arm3.png" id="6_bpll7"]
 [ext_resource type="Texture2D" uid="uid://d032k1hc1dkk1" path="res://assets/sprites/slime_grapple_hand.png" id="6_lrhwi"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_66x4b"]
@@ -93,8 +93,8 @@ script = ExtResource("4_16cwv")
 show_behind_parent = true
 texture_repeat = 2
 points = PackedVector2Array(0, 0, 0, 0)
-width = 5.0
-texture = ExtResource("5_kqgth")
+width = 3.0
+texture = ExtResource("6_bpll7")
 texture_mode = 2
 
 [node name="RayCast2D" type="RayCast2D" parent="Hook"]

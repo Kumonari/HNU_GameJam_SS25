@@ -30,8 +30,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="MainCharacter" type="CharacterBody2D"]
+[node name="MainCharacter" type="CharacterBody2D" node_paths=PackedStringArray("hook_node")]
 script = ExtResource("1_ukas5")
+hook_node = NodePath("Hook")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 0.123918

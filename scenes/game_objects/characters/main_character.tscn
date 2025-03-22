@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://c1f2g0w8hub43"]
+[gd_scene load_steps=8 format=3 uid="uid://c1f2g0w8hub43"]
 
 [ext_resource type="Script" path="res://scripts/main_character.gd" id="1_ukas5"]
 [ext_resource type="Texture2D" uid="uid://oqvwqpwnclr" path="res://assets/sprites/slime_walk.png" id="2_vbe87"]
+[ext_resource type="PackedScene" uid="uid://cmwgy8u8d8t6x" path="res://scenes/game_objects/hook.tscn" id="3_sx8g4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_66x4b"]
 radius = 8.0
@@ -33,9 +34,12 @@ animations = [{
 script = ExtResource("1_ukas5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 0.123918
 shape = SubResource("CapsuleShape2D_66x4b")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_v71v2")
 autoplay = "default"
 frame_progress = 0.599426
+
+[node name="Hook" parent="." instance=ExtResource("3_sx8g4")]

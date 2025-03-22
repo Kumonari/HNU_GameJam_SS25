@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cmwgy8u8d8t6x"]
+
+[node name="Hook" type="Node2D"]
+
+[node name="RayCast1" type="RayCast2D" parent="."]
+position = Vector2(12, 0)
+rotation = -1.5708
+target_position = Vector2(0, 500)

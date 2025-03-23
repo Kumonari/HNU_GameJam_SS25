@@ -15,6 +15,11 @@ run/main_scene="res://scenes/ui/menu/title_screen.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameTime="*res://scripts/game_time.gd"
+BackgroundMusic="*res://assets/sounds/background_Music.tscn"
+
 [display]
 
 window/size/viewport_width=320

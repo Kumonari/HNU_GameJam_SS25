@@ -1,6 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://x7tfdbrcjaa2"]
+[gd_scene load_steps=7 format=3 uid="uid://x7tfdbrcjaa2"]
 
 [ext_resource type="Script" path="res://scripts/titel_screen.gd" id="1_ckq7l"]
+[ext_resource type="Texture2D" uid="uid://dpoklqhfbyshy" path="res://assets/sprites/title_screen.png" id="2_xjnj1"]
+[ext_resource type="Texture2D" uid="uid://kcm3xfb40wu4" path="res://assets/sprites/button.png" id="3_6yurj"]
+[ext_resource type="Texture2D" uid="uid://7626xvkalq72" path="res://assets/sprites/button_pressed.png" id="4_5dg42"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pdgfb"]
+texture = ExtResource("3_6yurj")
+expand_margin_left = 6.0
+expand_margin_top = 2.0
+expand_margin_right = 6.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pih2n"]
+texture = ExtResource("4_5dg42")
+expand_margin_left = 6.0
+expand_margin_top = 2.0
+expand_margin_right = 6.0
+expand_margin_bottom = 8.0
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -11,6 +28,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ckq7l")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 180.0
+texture = ExtResource("2_xjnj1")
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -18,6 +41,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = -230
+theme_override_constants/margin_top = 50
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -27,12 +52,34 @@ size_flags_vertical = 4
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "start"
+theme_override_styles/focus = SubResource("StyleBoxTexture_pdgfb")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_pdgfb")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_pdgfb")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_pdgfb")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_pdgfb")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_pdgfb")
+theme_override_styles/hover = SubResource("StyleBoxTexture_pdgfb")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_pih2n")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_pih2n")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_pdgfb")
+theme_override_styles/normal = SubResource("StyleBoxTexture_pdgfb")
+text = "Start"
 
 [node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxTexture_pdgfb")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_pdgfb")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_pdgfb")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_pdgfb")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_pdgfb")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_pdgfb")
+theme_override_styles/hover = SubResource("StyleBoxTexture_pdgfb")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_pih2n")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_pih2n")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_pdgfb")
+theme_override_styles/normal = SubResource("StyleBoxTexture_pdgfb")
 text = "Quit"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_pressed"]

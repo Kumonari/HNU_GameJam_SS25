@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=4 uid="uid://oevogelyady"]
+[gd_scene load_steps=9 format=4 uid="uid://oevogelyady"]
 
 [ext_resource type="PackedScene" uid="uid://bexhrj5kj4uxw" path="res://scenes/ui/ui.tscn" id="1_hptvk"]
 [ext_resource type="Texture2D" uid="uid://brhwpiamd0dl7" path="res://assets/sprites/LEVEL_1_Background.png" id="1_v7hkf"]
 [ext_resource type="Texture2D" uid="uid://bxo1ajii0fsnw" path="res://assets/sprites/tileset_level1.png" id="2_u3ctt"]
 [ext_resource type="PackedScene" uid="uid://c1f2g0w8hub43" path="res://scenes/game_objects/characters/main_character.tscn" id="3_wpax7"]
-[ext_resource type="PackedScene" uid="uid://de6l3wwifoej8" path="res://scenes/game_objects/lvlswap.tscn" id="4_v1ovr"]
 [ext_resource type="PackedScene" uid="uid://cjb58x1y61vu" path="res://scenes/game_objects/camera.tscn" id="5_uwxc3"]
 [ext_resource type="Texture2D" uid="uid://vomuvnj4epi4" path="res://assets/sprites/LEVEL_1_Parlax.png" id="6_200ub"]
 
@@ -79,10 +78,6 @@ tile_set = SubResource("TileSet_u04w3")
 [node name="MainCharacter" parent="." node_paths=PackedStringArray("parallax") instance=ExtResource("3_wpax7")]
 position = Vector2(95, 115)
 parallax = NodePath("../Parallax2D")
-
-[node name="lvlswap" parent="." instance=ExtResource("4_v1ovr")]
-position = Vector2(561, 288)
-scenePath = "res://scenes/game/level_2.tscn"
 
 [node name="Camera" parent="." node_paths=PackedStringArray("target") instance=ExtResource("5_uwxc3")]
 target = NodePath("../MainCharacter")

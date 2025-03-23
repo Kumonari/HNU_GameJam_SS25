@@ -2,7 +2,7 @@ class_name TitleScreen
 extends Control
 
 
-var main_scene_path = "res://scenes/game/main_scene.tscn"
+var main_scene_path = "res://scenes/game/level_1.tscn"
 
 
 func _on_start_pressed() -> void:

@@ -5,7 +5,7 @@ extends CharacterBody2D
 
 # movement variables
 var speed : float = 5000
-var jump : float = -10000
+var jump : float = -15000
 var fall_speed :float = 800
 var slowout: float = 100
 var input: bool = true

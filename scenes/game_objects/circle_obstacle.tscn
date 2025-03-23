@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://fek28xpmidlb"]
+[gd_scene load_steps=8 format=3 uid="uid://fek28xpmidlb"]
 
 [ext_resource type="Script" path="res://scripts/Circle_obstacle.gd" id="1_pot0y"]
-[ext_resource type="Texture2D" uid="uid://byulfhhnlymi3" path="res://icon.svg" id="2_36rdw"]
+[ext_resource type="Texture2D" uid="uid://cccnc75y832db" path="res://assets/sprites/block_flying.png" id="2_mcvk8"]
 
 [sub_resource type="Curve2D" id="Curve2D_8egj6"]
 _data = {
@@ -10,7 +10,29 @@ _data = {
 point_count = 5
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cbesh"]
-size = Vector2(76, 11)
+size = Vector2(18.9959, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rfqwd"]
+atlas = ExtResource("2_mcvk8")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stocd"]
+atlas = ExtResource("2_mcvk8")
+region = Rect2(32, 0, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5roof"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rfqwd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_stocd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="CircleObstacle" type="Node2D"]
 position = Vector2(101, 83)
@@ -28,12 +50,10 @@ script = ExtResource("1_pot0y")
 [node name="StaticBody2D" type="StaticBody2D" parent="Path2D/PathFollow2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/StaticBody2D"]
-position = Vector2(0, 0.5)
+position = Vector2(-0.141769, 0.625443)
 rotation = -0.724312
 shape = SubResource("RectangleShape2D_cbesh")
 
-[node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D/StaticBody2D"]
-position = Vector2(0, 7.15256e-07)
-rotation = -0.71733
-scale = Vector2(0.609375, 0.09375)
-texture = ExtResource("2_36rdw")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Path2D/PathFollow2D/StaticBody2D/CollisionShape2D"]
+sprite_frames = SubResource("SpriteFrames_5roof")
+frame_progress = 0.298602

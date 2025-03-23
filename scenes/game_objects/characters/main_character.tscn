@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://c1f2g0w8hub43"]
+[gd_scene load_steps=38 format=3 uid="uid://c1f2g0w8hub43"]
 
 [ext_resource type="Script" path="res://scripts/main_character.gd" id="1_ukas5"]
 [ext_resource type="Texture2D" uid="uid://bafywe1xwqjmt" path="res://assets/sprites/slime_die.png" id="2_mj183"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://oqvwqpwnclr" path="res://assets/sprites/slime_walk.png" id="5_n02wx"]
 [ext_resource type="Texture2D" uid="uid://dsqs4bup3w7t1" path="res://assets/sprites/slime_grapple_arm3.png" id="6_bpll7"]
 [ext_resource type="Texture2D" uid="uid://d032k1hc1dkk1" path="res://assets/sprites/slime_grapple_hand.png" id="6_lrhwi"]
+[ext_resource type="Script" path="res://scripts/hand_hit_box.gd" id="10_uyuxk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_66x4b"]
 radius = 6.0
@@ -155,7 +156,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_v722k")
 }],
-"loop": true,
+"loop": false,
 "name": &"death",
 "speed": 7.0
 }, {
@@ -210,6 +211,9 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_dfkgf"]
+radius = 2.23607
+
 [node name="MainCharacter" type="CharacterBody2D"]
 collision_mask = 2
 script = ExtResource("1_ukas5")
@@ -244,3 +248,10 @@ collision_mask = 2
 [node name="Hand" type="Sprite2D" parent="Hook"]
 visible = false
 texture = ExtResource("6_lrhwi")
+
+[node name="HandHitBox" type="Area2D" parent="Hook/Hand"]
+collision_mask = 2
+script = ExtResource("10_uyuxk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hook/Hand/HandHitBox"]
+shape = SubResource("CircleShape2D_dfkgf")

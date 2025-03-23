@@ -26,6 +26,3 @@ func Health_Screen():
 		Health1.frame = 1
 		Health2.frame = 1
 		Health3.frame = 1
-		
-		await get_tree().create_timer(1.0).timeout
-		get_tree().quit()

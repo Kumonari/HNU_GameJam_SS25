@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=4 uid="uid://2w7jtmul5m8p"]
+[gd_scene load_steps=8 format=4 uid="uid://2w7jtmul5m8p"]
 
 [ext_resource type="Texture2D" uid="uid://bqo0nffp7h3hf" path="res://assets/sprites/tileset_level2.png" id="1_wjxtr"]
 [ext_resource type="PackedScene" uid="uid://c1f2g0w8hub43" path="res://scenes/game_objects/characters/main_character.tscn" id="2_yi18w"]
 [ext_resource type="PackedScene" uid="uid://bexhrj5kj4uxw" path="res://scenes/ui/ui.tscn" id="3_ijab7"]
+[ext_resource type="PackedScene" uid="uid://cjb58x1y61vu" path="res://scenes/game_objects/camera.tscn" id="4_2cf2l"]
 [ext_resource type="PackedScene" uid="uid://kfljnynspfmv" path="res://scenes/game_objects/lvlswap2.tscn" id="4_hesah"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m48w0"]
@@ -53,9 +54,29 @@ tile_set = SubResource("TileSet_1cu7p")
 [node name="MainCharacter" parent="." instance=ExtResource("2_yi18w")]
 position = Vector2(18, 123)
 
-[node name="UI" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_ijab7")]
-player = NodePath("../MainCharacter")
-
 [node name="lvlswap" parent="." instance=ExtResource("4_hesah")]
 position = Vector2(307, 113)
 scenePath = "res://scenes/game/level_3.tscn"
+
+[node name="Camera" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_2cf2l")]
+target = NodePath("../MainCharacter")
+SMOOTH_SPEED = 0.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="CanvasLayer" node_paths=PackedStringArray("player") instance=ExtResource("3_ijab7")]
+player = NodePath("../../MainCharacter")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground"]
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Background" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true

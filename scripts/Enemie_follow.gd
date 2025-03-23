@@ -6,6 +6,8 @@ var direction
 var gravity = 800
 var time = 0.0
 
+@export var follow: Node2D
+
 func _physics_process(delta):
 	if is_on_floor():
 		$AnimatedSprite2D.play("default")
@@ -17,14 +19,14 @@ func _physics_process(delta):
 
 	if not is_on_floor():
 		velocity.y += gravity * delta
-	if player.global_position.x == global_position.x - 110:
+	if follow.global_position.x == global_position.x - 110:
 		velocity.x = 0
 	move_and_slide()
 		
 func Jump(delta):
 	velocity.y += jump * delta
-	if player.global_position.x > global_position.x - 110:
+	if follow.global_position.x > global_position.x - 110:
 		velocity.x = speed * delta
-	elif player.global_position.x < global_position.x - 110:
+	elif follow.global_position.x < global_position.x - 110:
 		velocity.x = -speed * delta
 		

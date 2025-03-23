@@ -1,9 +1,8 @@
 extends Area2D
 
+@export var damage_value: int = 1
 
-
-
-
-
-func _on_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
-		get_tree().quit()
+func damage(body):
+	var player:MainCharacter = body as MainCharacter
+	if player != null:
+		player.damage(damage_value)

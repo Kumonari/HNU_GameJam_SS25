@@ -2,8 +2,8 @@ extends Node2D
 
 
 @export var rest_length = 0
-@export var stiffness = 25
-@export var damping_value = 10
+@export var stiffness = 30
+@export var damping_value = 5
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $"../AnimatedSprite2D"
 @onready var player := get_parent()
@@ -17,13 +17,14 @@ var target: Vector2
 func _process(delta):
 	ray.look_at(get_global_mouse_position())
 	
-	if Input.is_action_just_pressed("l_click"):
-		launch()
-		animated_sprite_2d.play("hooking")
-	
-	if Input.is_action_just_released("l_click"):
-		retract()
-		animated_sprite_2d.play("idle")
+	if player.input:
+		if Input.is_action_just_pressed("l_click"):
+			launch()
+			animated_sprite_2d.play("hooking")
+		
+		if Input.is_action_just_released("l_click"):
+			retract()
+			animated_sprite_2d.play("idle")
 	
 	if launched:
 		handle_grapple(delta)
